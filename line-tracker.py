@@ -18,27 +18,26 @@ while True:
     oled.clear_display()
     sensors = sen.read_two_sensors()
     oled.text('Left:', 0, 0)
-    oled.text(str(sensors["sensorL"]), 50, 0)
+    oled.text(str(sensors["sensorL"]), 60, 0)
     oled.text('Right:', 0, 10)
-    oled.text(str(sensors["sensorR"]), 50, 10)
+    oled.text(str(sensors["sensorR"]), 60, 10)
     oled.text('Action:', 0, 30)
-    l = 2200
-    r = 1000
+
     if sensors["sensorL"] > splitterL and sensors["sensorR"] > splitterR:
-        oled.text('Go', 50, 30)
-        mot.run(50,50)
+        oled.text('Go', 60, 30)
+        #mot.run(50,50)
         
     elif sensors["sensorL"] <= splitterL and sensors["sensorR"] > splitterR:
-        oled.text('Left', 50, 30)
-        mot.run(-40,40)
+        oled.text('Left', 60, 30)
+        #mot.run(-40,40)
         time.sleep(0.1)
     elif sensors["sensorL"] > splitterL and sensors["sensorR"] <= splitterR:
-        oled.text('Right', 50, 30)
-        mot.run(40,-40)
+        oled.text('Right', 60, 30)
+        #mot.run(40,-40)
         time.sleep(0.1)
     else:
-        oled.text('Stop', 50, 30)
-        mot.run(0,0)
+        oled.text('Stop', 60, 30)
+        #mot.run(0,0)
     oled.show()
     
     

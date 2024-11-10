@@ -125,6 +125,11 @@ class SSD1306_I2C(SSD1306):
 
     def poweron(self):
         pass
+    
+    def clear_display(self):
+        """Clears the display by filling it with zeros and updating the screen."""
+        self.fill(0)  # Fill the buffer with 0 (black)
+        self.show()   # Update the display to show the cleared screen
 
 
 class SSD1306_SPI(SSD1306):

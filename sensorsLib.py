@@ -4,7 +4,7 @@ import time
 
 # Setup analog pin
 adcL = ADC(Pin(26))  # Replace with the actual analog pin you connected the sensor to
-adcR = ADC(Pin(36))  # Replace with the actual analog pin you connected the sensor to
+adcR = ADC(Pin(25))  # Replace with the actual analog pin you connected the sensor to
 
 
 def read_two_sensors():

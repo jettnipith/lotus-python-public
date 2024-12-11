@@ -1,11 +1,15 @@
 from machine import ADC, Pin
 import time
+import dht
 
 
 # Setup analog pin
 adcL = ADC(Pin(26))  # Replace with the actual analog pin you connected the sensor to
 adcR = ADC(Pin(25))  # Replace with the actual analog pin you connected the sensor to
 adc1 = ADC(Pin(14))
+# Setup digital pin
+sensorDHT11 = dht.DHT11(machine.Pin(23))
+
 
 
 def read_two_sensors():
@@ -36,5 +40,17 @@ def moisture():
     except Exception as e:
         #print(f'Error reading sensor data: {e}')
         return e
+def dht11():
+    try:
+        # Read sensor data
+        sensorDHT11.measure()
+        temperature = sensorDHT11.temperature()
+        humidity = sensorDHT11.humidity()
+    
+        # Print sensor data
+        return {"temperature": temperature, "humiduty": humidity}
+    
+    except Exception as e:
+        return f'Error reading sensor data: {e}'
 
 

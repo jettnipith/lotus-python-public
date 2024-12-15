@@ -49,7 +49,7 @@ def dht11():
         humidity = sensorDHT11.humidity()
     
         # Print sensor data
-        return {"temperature": temperature, "humiduty": humidity}
+        return {"temperature": temperature, "humidity": humidity}
     
     except Exception as e:
         return f'Error reading sensor data: {e}'
@@ -62,7 +62,7 @@ def dht22():
         humidity = sensorDHT22.humidity()
         
         # Print sensor data
-        return {"temperature": temperature, "humiduty": humidity}
+        return {"temperature": temperature, "humidity": humidity}
     
     except Exception as e:
         return f'Error reading sensor data: {e}'
